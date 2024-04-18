@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+:root {
+    --mainColor : #191a2b;
+    --titleColor: #d1d9df;
+    --paragraphColor : #a0b2c2;
+    --greenColor : #6ef3a5;
+    --blueColor : #10375c;
+    --orange : #ff7b00ea;
+    --transition : .7s;
+    --border : 1px solid rgba(114, 226, 174, 0.2);
+}
+body::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+    padding: 0px 10px;
+    background-color: var(--mainColor);
+    border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background:linear-gradient(8deg, rgba(8,52,83,1) 0%, rgba(0,230,173,1) 41%, rgba(41,17,4,1) 100%);
+    border: 2px solid var(--mainColor);
+}
+body {
+    background-color: #191a2b;
+    color: var(--titleColor);
+    overflow-x: hidden;
+}
+.nav-js {
+    background-color: transparent;
+    /* box-shadow: 1px 1px 1px var(--fuildColor); */
+}
+.great-vibes-regular {
+    font-family: "Great Vibes", cursive;
+    font-weight: 400;
+    font-style: normal;
+    color: #6ef3a5;
+    border-bottom: 1px solid var(--greenColor);
+  }
+
+ul .link a:hover{
+    color: var(--greenColor);
+    transition: var(--transition);
+    letter-spacing: 4px;
+    background-color: transparent !important;
+}
+button {
+    border: var(--border);
+    cursor: pointer;
+}
+button:hover{
+    background-color: #1c2335 !important;
+    color: var(--titleColor) !important;
+}
+.btn-hero:hover ~ .hiro-img {
+    @apply animate-bounce;
+}
+/* animation upDown css */
+/* .up-down {
+    animation-name: updown;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes updown {
+    0%{left: -80px;}
+    80% {left: 100px;}
+    100%{left: -100px;}
+} */
+
+/* MouseMove */
+#mousemove {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    /* transform: translate(-50%, -50%); */
+    border-radius: 50px;
+    transition: .5s ease;
+    z-index: -1;
+    box-shadow: 10px 10px 10px var(--blueColor);
+}
+#home h1 {
+    color: var(--greenColor);
+}
+#about .about-box {
+    border: var(--border);
+}
+#about .about-box:hover {
+    background-color: transparent;
+    transform: translateY(8px);
+    transition: var(--transition);
+    border-color: var(--greenColor);
+}
+#resume .text-box, 
+#about .text-box, 
+#service .text-box, 
+#portfolio .text-box, 
+#reference .text-box, 
+#contact .text-box h1 {
+    color: var(--titleColor);
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: transparent;
+    letter-spacing: 4px;
+    background-color: rgb(4, 52, 83);
+    background: linear-gradient(8deg, rgba(8,52,83,1) 0%, rgba(0,230,173,1) 41%, rgba(41,17,4,1) 100%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    font-size: 3rem;
+}
+#service article .box-service{
+    background-color: transparent;
+    border: var(--border);
+}
+#service article .box-service:hover{
+    border-color: var(--greenColor);
+    background-color: transparent;
+}
+#reference article .box-ref{
+    background-color: #1c2335;
+    border: var(--border);
+}
+input::placeholder{
+    color: var(--blueColor);
+}
+
+#education {
+    /* background-image: linear-gradient(rgb(0,0,0,0.585), rgba(0,0,0,0.5)), url(../pngtree-d-render-of-graduation-cap-globe-books-and-diploma-on-a-picture-image_5814610.jpg); */
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    /* background-blend-mode: darken;/ */
+}
+.coeur {
+    box-shadow: 0 0 0 0 var(--blueColor);
+    animation: batment 2s infinite cubic-bezier(.55, 0, 0, 1);
+}
+@keyframes batment {
+    to {
+        box-shadow: 0 0 0 50px rgb(255, 71, 84, 0);
+    }
+}
+.bi-arrow-up-circle {
+    /* background-color: red; */
+    font-size: 200%;
+}
+
+nav a.active{
+    color: #6ef3a5;
+}
+
+/*  ********************* AFTER start ************************** */
+
+.title-sect {
+    border-bottom: 3px solid var(--blueColor);
+    padding: 10px;
+    
+}
+.title-sect::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    background-color: var(--blueColor);
+    border-radius: 100%;
+    margin-left: 50px;
+    margin-top: 4px;
+}
+.hiro-img::after{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-top: 5px solid var(--blueColor);
+    border-left: 5px solid var(--blueColor);
+    top: 0;
+    left: 0;
+    transition: .7s;
+}
+.hiro-img::before{
+    content: '';
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-right: 5px solid var(--blueColor);
+    border-bottom: 5px solid var(--blueColor);
+    right: 0;
+    bottom: 0;
+    transition: .7s;
+}
+/* *********************** AFTER end *********************************** */
+
+
+/* **************************  @KEYFRAMES start  ************************* */
+/* @keyFrames design skills */
+.progressBar1 {
+    width: 80%;
+    height: 9px;
+    background: linear-gradient(8deg, rgba(8,52,83,1) 0%, rgba(0,230,173,0.5) 41%, rgba(41,17,4,0.5) 100%);
+    transition: var(--transition);
+    border-radius: 5px;
+    animation-name: loader1;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+} 
+.progressBar2 {
+    width: 65%;
+    height: 9px;
+    background: linear-gradient(8deg, rgba(8,52,83,1) 0%, rgba(0,230,173,0.5) 41%, rgba(41,17,4,0.5) 100%);
+    transition: var(--transition);
+    border-radius: 5px;
+    animation-name: loader2;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+} 
+.progressBar3 {
+    width: 50%;
+    height: 9px;
+    background: linear-gradient(8deg, rgba(8,52,83,1) 0%, rgba(0,230,173,0.5) 41%, rgba(41,17,4,0.5) 100%);
+    transition: var(--transition); 
+    border-radius: 5px;
+    animation-name: loader3;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+.progressBar4{
+    width: 30%;
+    height: 9px;
+    background: linear-gradient(8deg, rgba(8,52,83,1) 0%, rgba(0,230,173,0.5) 41%, rgba(41,17,4,0.5) 100%);
+    transition: var(--transition);
+    border-radius: 5px;
+    animation-name: loader4;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+@keyframes loader1 {0% {width: 0px;}80% {width: 80%;}}
+@keyframes loader2 {0% {width: 0px;}65% {width: 65%;}}
+@keyframes loader3 {0% {width: 0px;}50% {width: 50%;}}
+@keyframes loader4 {0% {width: 0px;}30% {width: 30%;}}
+
+/* ***********************KEYFRAMES end ************************************ */
+
+/* ******************* ALL JAVASCRIPT add classList start ********************* */
+
+/* Part of Javascript add function to btn-toogle */
+.nav-scroll {
+    margin-top: 0px;
+    transition: var(--transition);
+}
+
+.show-menu {
+    display: block;
+    position: fixed;
+    display: flex;
+    height: 100vh;
+    transition: var(--transition);
+    background-color: var(--mainColor);
+    color: var(--titleColor);
+    transform: translateX(0%);
+    top: 0;
+    z-index: 50;
+}
+.close-menu{
+    transition: var(--transition);
+    border: 1px solid var(--blueColor);
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    z-index: 50;
+}
+.hiro-img {
+    transform: scale(90%);
+    transition: var(--transition);
+}
+
+/* Transform scale */
+.obs{
+    opacity:0;
+    transform:translateY(0);
+    transition: 1s, opacity 1s;
+}
+
+.obs--not-visible{
+    opacity:1;
+    transform: translateY(-50px);
+}
+
+.transit{
+    opacity:0;
+    transform:scale(0);
+    transition: 1s, opacity 1s;
+}
+
+.transit--not-visible{
+    opacity:1;
+    transform: scale(100px);
+}
+
+.show-svc {
+    display: block;
+}
+
+.show-pop {
+    display: block;
+    position: absolute;
+    width: 90%;
+    z-index: 999;
+}
+.the-body{
+    overflow-y: hidden;
+}
+.the-main-page{
+    /* filter: blur(1px); */
+    user-select: none;
+}
+
+/* Dark and light mode */
+.dark {
+    background-color: var(--mainColor);
+}
+.light-theme{
+    background-color: #ffffff8e;
+    color: var(--blueColor);
+    transition: all .7 ease;
+}
+/* ******************* ALL JAVASCRIPT add classList end ********************* */
+
